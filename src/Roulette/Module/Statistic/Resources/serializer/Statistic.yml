@@ -1,0 +1,5 @@
+\Roulette\Module\Statistic\Dto\Statistic:
+    exclusion_policy: ALL
+    properties:
+        data:
+            type: array

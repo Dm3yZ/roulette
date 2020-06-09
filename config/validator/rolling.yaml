@@ -1,0 +1,6 @@
+Roulette\Module\Rolling\Dto\RollRequest:
+    properties:
+        userId:
+            - NotBlank: ~
+            - GreaterThan:
+                  value: 0

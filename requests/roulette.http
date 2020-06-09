@@ -1,0 +1,10 @@
+POST {{host}}/rounds/roll
+Content-Type: application/json
+Accept: application/json
+Cookie: {{xdebug}}
+
+{
+  "userId": 1
+}
+
+###

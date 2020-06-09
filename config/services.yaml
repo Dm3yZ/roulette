@@ -1,0 +1,46 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $cellsCount: 10
+            $env: '%env(APP_ENV)%'
+
+    App\:
+        resource: '../src/App/*'
+        exclude: '../src/App/{DependencyInjection,Entity,Migrations,Tests,Dto,Kernel.php}'
+
+    Roulette\:
+        resource: '../src/Roulette/*'
+        exclude: '../src/Roulette/*/*/{DependencyInjection,Entity,Migrations,Tests,Dto,Kernel.php}'
+
+    App\Controller\:
+        resource: '../src/App/Controller'
+        tags: ['controller.service_arguments']
+
+    app.roulette_statistic_action:
+        class: App\Controller\StatisticActions\CommonStatisticAction
+        arguments:
+            - '@app.roulette_statistic_service'
+        tags: ['controller.service_arguments']
+
+    app.user_statistic_action:
+        class: App\Controller\StatisticActions\CommonStatisticAction
+        arguments:
+            - '@app.users_statistic_service'
+        tags: ['controller.service_arguments']
+
+    Roulette\Module\Statistic\Service\StatisticService:
+        autowire: false
+
+    app.roulette_statistic_service:
+        class: Roulette\Module\Statistic\Service\StatisticService
+        arguments:
+            - '@Roulette\Module\Statistic\Factory\RouletteStatisticFactory'
+
+    app.users_statistic_service:
+        class: Roulette\Module\Statistic\Service\StatisticService
+        arguments:
+            - '@Roulette\Module\Statistic\Factory\UsersStatisticDataFactory'

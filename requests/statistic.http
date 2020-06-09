@@ -1,0 +1,13 @@
+GET {{host}}/statistic/roulettes
+Content-Type: application/json
+Accept: application/json
+Cookie: {{xdebug}}
+
+###
+
+GET {{host}}/statistic/users
+Content-Type: application/json
+Accept: application/json
+Cookie: {{xdebug}}
+
+###

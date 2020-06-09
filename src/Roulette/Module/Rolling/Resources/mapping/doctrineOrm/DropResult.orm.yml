@@ -1,0 +1,28 @@
+Roulette\Module\Rolling\Entity\DropResult:
+    type: entity
+    table: drop_result
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    fields:
+        userId:
+            type: integer
+            column: user_id
+        cellNumber:
+            type: integer
+            column: cell_number
+        dropDate:
+            type: datetimetz
+            column: drop_date
+
+    manyToOne:
+        round:
+            targetEntity: Roulette\Module\Rolling\Entity\Round
+            inversedBy: dropResults
+            joinColumn:
+                name: round_id
+                referencedColumnName: id

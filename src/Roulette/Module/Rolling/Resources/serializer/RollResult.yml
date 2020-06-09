@@ -1,0 +1,12 @@
+Roulette\Module\Rolling\Dto\RollResult:
+    exclusion_policy: ALL
+    properties:
+        roundId:
+            type: integer
+            serialized_name: roundId
+        isJackPot:
+            type: boolean
+            serialized_name: isJackPot
+        cellNumber:
+            type: integer
+            serialized_name: cellNumber

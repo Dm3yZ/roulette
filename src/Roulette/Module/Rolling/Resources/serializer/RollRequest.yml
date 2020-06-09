@@ -1,0 +1,6 @@
+Roulette\Module\Rolling\Dto\RollRequest:
+    exclusion_policy: ALL
+    properties:
+        userId:
+            type: integer
+            serialized_name: userId

@@ -1,0 +1,5 @@
+rolling.round.roll:
+    path: /rounds/roll
+    controller: App\Controller\RoundActions\RollAction
+    format: json
+    methods: [ POST ]

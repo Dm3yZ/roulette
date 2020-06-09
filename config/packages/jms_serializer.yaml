@@ -1,0 +1,13 @@
+jms_serializer:
+    visitors:
+        xml_serialization:
+            format_output: '%kernel.debug%'
+    metadata:
+        auto_detection: false
+        directories:
+            Rolling:
+                namespace_prefix: "Roulette\\Module\\Rolling\\Dto"
+                path: "%kernel.project_dir%/src/Roulette/Module/Rolling/Resources/serializer"
+            App:
+                namespace_prefix: "App\\Dto"
+                path: "%kernel.project_dir%/src/App/Resources/serializer"

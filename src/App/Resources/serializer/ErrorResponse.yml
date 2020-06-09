@@ -1,0 +1,14 @@
+App\Dto\ErrorResponse:
+    exclusion_policy: ALL
+    properties:
+        message:
+            type: string
+        description:
+            type: array
+        trace:
+            type: string
+        errorCode:
+            type: integer
+            serialized_name: errorCode
+
+

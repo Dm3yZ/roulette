@@ -1,0 +1,11 @@
+rolling.statistic.roulettes:
+    path: /statistic/roulettes
+    controller: app.roulette_statistic_action
+    format: json
+    methods: [ GET ]
+
+rolling.statistic.users:
+    path: /statistic/users
+    controller: app.user_statistic_action
+    format: json
+    methods: [ GET ]

@@ -1,0 +1,21 @@
+Roulette\Module\Rolling\Entity\Round:
+    type: entity
+    table: round
+    repositoryClass: Roulette\Module\Rolling\Repository\DoctrineOrm\RoundRepository
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    fields:
+        cellsCount:
+            type: integer
+            column: cells_count
+
+    oneToMany:
+        dropResults:
+            targetEntity: Roulette\Module\Rolling\Entity\DropResult
+            mappedBy: round
+            cascade: [persist]
